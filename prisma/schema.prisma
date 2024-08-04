@@ -13,3 +13,43 @@ datasource db {
   url       = env("POSTGRES_PRISMA_URL")
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
+
+model Tag {
+  id   String @id @default(nanoid(6))
+  name String
+  slug String @unique
+
+  updatedAt DateTime @updatedAt
+
+  resources ResourceTag[]
+
+  @@map("tags")
+}
+
+model Resource {
+  id          String  @id @default(nanoid(6))
+  title       String
+  description String
+  thumbnail   String
+  url         String  @unique
+  authorId    String
+  isPublished Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tags ResourceTag[]
+
+  @@map("resources")
+}
+
+model ResourceTag {
+  resourceId String
+  tagId      String
+
+  resource Resource @relation(fields: [resourceId], references: [id], onDelete: Cascade)
+  tag      Tag      @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([resourceId, tagId])
+  @@map("resource_tags")
+}
