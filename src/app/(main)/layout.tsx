@@ -20,7 +20,7 @@ export default function Layout({ children, feed }: Props) {
       {/* Resource content */}
       <div
         className={cn(
-          'hidden flex-1 lg:flex',
+          'hidden flex-1 flex-col lg:flex',
           layoutSegment === 'resources' && 'flex',
         )}
       >

@@ -12,3 +12,10 @@ export function formatDate(input: string | number | Date): string {
     year: 'numeric',
   })
 }
+
+export function toCapitalize(input: string) {
+  if (typeof input !== 'string' || input.length === 0) {
+    return ''
+  }
+  return input.charAt(0).toUpperCase() + input.slice(1)
+}

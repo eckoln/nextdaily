@@ -42,3 +42,23 @@ export const getResourcesByTag = cache(
     })
   },
 )
+
+export const getResourceById = cache(async (id: string) => {
+  return await prisma.resource.findUnique({
+    where: {
+      id: id,
+    },
+    include: {
+      tags: {
+        include: {
+          tag: {
+            select: {
+              name: true,
+              slug: true,
+            },
+          },
+        },
+      },
+    },
+  })
+})
