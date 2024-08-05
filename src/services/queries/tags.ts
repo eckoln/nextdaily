@@ -4,6 +4,9 @@ import { prisma } from '@/lib/db'
 
 export const getTags = cache(async () => {
   return await prisma.tag.findMany({
+    orderBy: {
+      index: 'asc',
+    },
     include: {
       _count: true,
     },

@@ -15,9 +15,10 @@ datasource db {
 }
 
 model Tag {
-  id   String @id @default(nanoid(6))
-  name String
-  slug String @unique
+  id    String @id @default(nanoid(6))
+  name  String
+  slug  String @unique
+  index Int    @default(autoincrement())
 
   updatedAt DateTime @updatedAt
 
