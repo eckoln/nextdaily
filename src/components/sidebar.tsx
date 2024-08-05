@@ -4,11 +4,18 @@ import Link from 'next/link'
 import { GitHubLogoIcon } from '@radix-ui/react-icons'
 import {
   BookmarkIcon,
+  BracesIcon,
+  CalendarIcon,
   ExternalLinkIcon,
+  LayoutTemplateIcon,
   LogOutIcon,
   MegaphoneIcon,
+  MonitorSmartphoneIcon,
+  Package2Icon,
+  PanelTopIcon,
   PinIcon,
   PlusIcon,
+  StickyNoteIcon,
 } from 'lucide-react'
 
 import { auth } from '@/lib/auth'
@@ -83,7 +90,7 @@ export async function Sidebar() {
         {/* Brand */}
         <PaneHeader className="justify-between">
           <Link
-            className="inline-flex items-center space-x-2 px-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring xl:p-0"
+            className="inline-flex items-center space-x-3 px-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring xl:p-0"
             href="/"
           >
             <BookmarkIcon size={20} />
@@ -96,7 +103,7 @@ export async function Sidebar() {
             {/* User section */}
             {session?.user && (
               <div className="space-y-0.5 py-2 xl:py-4">
-                <div className="flex h-9 items-center justify-between space-x-3 px-2 text-sm xl:px-4">
+                <div className="flex h-9 items-center justify-between space-x-3 px-2 text-sm xl:px-3">
                   <div className="flex items-center space-x-3">
                     <Image
                       className="rounded-full"
@@ -141,7 +148,7 @@ export async function Sidebar() {
             {/* Tags */}
             {tags.length > 0 && (
               <div className="space-y-0.5 py-2 xl:py-4">
-                <div className="flex h-9 items-center px-2 xl:px-4">
+                <div className="flex h-9 items-center px-2 xl:px-3">
                   <span className="text-sm">Menu</span>
                 </div>
                 {tags.map((tag) => {
