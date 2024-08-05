@@ -8,7 +8,17 @@ export const getTags = cache(async () => {
       index: 'asc',
     },
     include: {
-      _count: true,
+      _count: {
+        select: {
+          resources: {
+            where: {
+              resource: {
+                isPublished: true,
+              },
+            },
+          },
+        },
+      },
     },
   })
 })

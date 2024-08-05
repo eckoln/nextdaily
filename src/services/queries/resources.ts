@@ -47,6 +47,7 @@ export const getResourceById = cache(async (id: string) => {
   return await prisma.resource.findUnique({
     where: {
       id: id,
+      isPublished: true,
     },
     include: {
       tags: {
