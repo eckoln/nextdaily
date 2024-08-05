@@ -54,6 +54,20 @@ function getTagIcon(slug: string) {
   switch (slug) {
     case 'official':
       return MegaphoneIcon
+    case 'tutorials':
+      return MonitorSmartphoneIcon
+    case 'packages':
+      return Package2Icon
+    case 'events':
+      return CalendarIcon
+    case 'showcase':
+      return PanelTopIcon
+    case 'templates':
+      return LayoutTemplateIcon
+    case 'examples':
+      return BracesIcon
+    case 'opinions':
+      return StickyNoteIcon
     default:
       return PinIcon
   }
