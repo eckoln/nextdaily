@@ -17,6 +17,9 @@ export const getAllResources = cache(async (): Promise<FeedResource[]> => {
       createdAt: true,
       updatedAt: true,
     },
+    orderBy: {
+      createdAt: 'desc',
+    },
   })
 })
 
@@ -39,6 +42,9 @@ export const getResourcesByTag = cache(
         description: true,
         url: true,
         createdAt: true,
+      },
+      orderBy: {
+        createdAt: 'desc',
       },
     })
   },
