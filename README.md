@@ -1,3 +1,5 @@
+![thumbnail](https://github.com/user-attachments/assets/a273c5c0-1ebe-4e66-88e5-56a13665d78a)
+
 ## Introduction
 
 Next Daily is a platform for sharing all the resources and things about Next.js. It is built with Next.js and deployed on Vercel.
