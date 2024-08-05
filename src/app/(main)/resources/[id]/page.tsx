@@ -80,9 +80,8 @@ export default async function Page({ params, searchParams }: Props) {
                 <div className="space-y-4">
                   <Link
                     className="flex flex-col transition-colors hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-                    href={resource.url + `?ref=localhost`}
+                    href={resource.url}
                     target="_blank"
-                    rel="localhost"
                   >
                     <h1 className="text-xl text-foreground">
                       {resource.title}
