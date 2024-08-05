@@ -1,11 +1,9 @@
-'use client'
-
-import type { FeedResource } from '@/types/resourceType'
+import type { FeedTagResource } from '@/types/resourceType'
 
 import { ResourceCard } from './feed-resource-card'
 
 interface Props {
-  resources: FeedResource[]
+  resources: FeedTagResource[]
 }
 
 export function ResourcesList({ resources }: Props) {

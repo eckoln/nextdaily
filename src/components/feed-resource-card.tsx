@@ -7,10 +7,10 @@ import { cn, formatDate } from '@/lib/utils'
 
 import { useTagParams } from '@/hooks/use-tag-params'
 
-import type { FeedResource } from '@/types/resourceType'
+import type { FeedTagResource } from '@/types/resourceType'
 
 interface Props {
-  resource: FeedResource
+  resource: FeedTagResource
 }
 
 export function ResourceCard({ resource }: Props) {
