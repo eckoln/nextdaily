@@ -2,6 +2,8 @@ import RSS from 'rss'
 
 import { getAllResources } from '@/services/queries/resources'
 
+export const dynamic = 'force-dynamic'
+
 const SITE_URL =
   process.env.NODE_ENV === 'production'
     ? `https://${process.env.VERCEL_URL}`

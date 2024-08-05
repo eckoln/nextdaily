@@ -3,6 +3,8 @@ import { MetadataRoute } from 'next'
 import { getAllResources } from '@/services/queries/resources'
 import { getTags } from '@/services/queries/tags'
 
+export const dynamic = 'force-dynamic'
+
 const SITE_URL =
   process.env.NODE_ENV === 'production'
     ? `https://${process.env.VERCEL_URL}`
