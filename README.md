@@ -6,7 +6,7 @@ Next Daily is a platform for sharing all the resources and things about Next.js.
 
 ## Deploy Your Own
 
-Deploy the example using [Vercel](https://vercel.com) or view the demo [here](https://nextdaily.vercel.app/)
+Deploy the example using [Vercel](https://vercel.com) or view the demo [here](https://nextdaily.vercel.app)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Feckoln%2Fnextdaily)
 
@@ -14,27 +14,27 @@ Deploy the example using [Vercel](https://vercel.com) or view the demo [here](ht
 
 ### Frameworks
 
-- [Next.js](http://localhost 'Next.js') - Frontend
-- [Auth.js](http://localhost 'Next.js') - Authentication
-- [Prisma](http://localhost 'Next.js') - Backend
+- [Next.js](https://nextjs.org) - Frontend
+- [Auth.js](https://authjs.dev) - Authentication
+- [Prisma](https://www.prisma.io) - Backend
 
 ### Platforms
 
-- [Vercel](http://localhost 'Next.js') - Deploy
-- [Vercel Postgres](http://localhost 'Next.js') - Database
+- [Vercel](https://vercel.com) - Deploy
+- [Vercel Postgres](https://vercel.com/docs/storage/vercel-postgres) - Database
 
 ### UI
 
-- [Tailwind CSS](http://localhost 'Next.js') - Styling
-- [Shadcn UI](http://localhost 'Next.js') - Styling
-- [Radix UI](http://localhost 'Next.js') - Primitives
-- [Lucide](http://localhost 'Next.js') - Icons
-- [Geist](http://localhost 'Next.js') - Font
+- [Tailwind CSS](https://tailwindcss.com) - Styling
+- [Shadcn UI](https://ui.shadcn.com) - Styling
+- [Radix UI](https://www.radix-ui.com/primitives) - Primitives
+- [Lucide](https://lucide.dev/icons) - Icons
+- [Geist](https://github.com/vercel/geist-font) - Font
 
 ### Miscellaneous
 
-- [url-metadata](http://localhost 'Next.js') - Metadata parser for target URLs
-- [rss](http://localhost 'Next.js') - RSS Feed
+- [url-metadata](https://github.com/laurengarcia/url-metadata) - Metadata parser for target URLs
+- [rss](https://github.com/dylang/node-rss) - RSS Feed
 
 ## Roadmap
 
