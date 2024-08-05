@@ -27,6 +27,10 @@ const externalLinks = [
     label: 'Next.js GitHub',
     href: 'https://github.com/vercel/next.js',
   },
+  {
+    label: 'RSS',
+    href: '/feed.xml',
+  },
 ]
 
 function getTagIcon(slug: string) {
