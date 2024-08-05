@@ -104,7 +104,7 @@ export default async function Page({ params, searchParams }: Props) {
                 >
                   <Image
                     src={resource.thumbnail}
-                    alt=""
+                    alt={resource.title}
                     width={1024}
                     height={537}
                     unoptimized

@@ -108,7 +108,7 @@ export async function Sidebar() {
                     <Image
                       className="rounded-full"
                       src={session.user.image!}
-                      alt=""
+                      alt="User Avatar"
                       width={16}
                       height={16}
                       unoptimized
