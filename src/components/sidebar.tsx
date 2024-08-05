@@ -8,6 +8,7 @@ import {
   LogOutIcon,
   MegaphoneIcon,
   PinIcon,
+  PlusIcon,
 } from 'lucide-react'
 
 import { auth } from '@/lib/auth'
@@ -19,7 +20,16 @@ import { PaneContainer, PaneContent, PaneHeader } from './pane'
 import { SidebarClient } from './sidebar-client'
 import { NavItem } from './sidebar-nav-item'
 import { SidebarToggle } from './sidebar-toggle'
+import { SubmitResourceForm } from './submit-resource-form'
 import { Button } from './ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from './ui/dialog'
 
 const externalLinks = [
   {
@@ -85,6 +95,25 @@ export async function Sidebar() {
                     <span>{session.user.name}</span>
                   </div>
                   <div className="flex items-center space-x-3">
+                    {/* Submit a resource */}
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="inline-flex size-4 transition-colors hover:text-accent-foreground">
+                          <PlusIcon size={16} />
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-md">
+                        <DialogHeader>
+                          <DialogTitle>Submit a resource</DialogTitle>
+                          <DialogDescription>
+                            We will review your submission and add it to our
+                            collection within 24 hours.
+                          </DialogDescription>
+                        </DialogHeader>
+                        <SubmitResourceForm />
+                      </DialogContent>
+                    </Dialog>
+                    {/* Sign out */}
                     <form className="inline-flex" action={signOut}>
                       <button className="inline-flex size-4 transition-colors hover:text-accent-foreground">
                         <LogOutIcon size={16} />

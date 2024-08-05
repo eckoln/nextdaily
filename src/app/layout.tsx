@@ -1,3 +1,5 @@
+import { Toaster } from 'react-hot-toast'
+
 import type { Metadata, Viewport } from 'next'
 
 import { GeistSans } from 'geist/font/sans'
@@ -45,6 +47,7 @@ export default function Layout({ children }: Props) {
           <Sidebar />
           <MainClient>{children}</MainClient>
         </Providers>
+        <Toaster />
       </body>
     </html>
   )
