@@ -43,7 +43,7 @@ Deploy the example using [Vercel](https://vercel.com) or view the demo [here](ht
 - [ ] Bookmarks
 - [ ] Admin Dashboard Features
 
-## Development
+## Running Locally
 
 1. Clone this repository to your local machine.
 2. Copy .env.example to .env and fill in the required environment variables.
