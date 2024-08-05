@@ -1,18 +1,25 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
+import { GitHubLogoIcon } from '@radix-ui/react-icons'
 import {
   BookmarkIcon,
   ExternalLinkIcon,
+  LogOutIcon,
   MegaphoneIcon,
   PinIcon,
 } from 'lucide-react'
 
+import { auth } from '@/lib/auth'
+
+import { signInWithGithub, signOut } from '@/services/actions/auth'
 import { getTags } from '@/services/queries/tags'
 
 import { PaneContainer, PaneContent, PaneHeader } from './pane'
 import { SidebarClient } from './sidebar-client'
 import { NavItem } from './sidebar-nav-item'
 import { SidebarToggle } from './sidebar-toggle'
+import { Button } from './ui/button'
 
 const externalLinks = [
   {
@@ -43,6 +50,7 @@ function getTagIcon(slug: string) {
 }
 
 export async function Sidebar() {
+  const session = await auth()
   const tags = await getTags()
 
   return (
@@ -61,6 +69,32 @@ export async function Sidebar() {
         </PaneHeader>
         <PaneContent>
           <nav className="flex flex-1 flex-col divide-y divide-border text-muted-foreground">
+            {/* User section */}
+            {session?.user && (
+              <div className="space-y-0.5 py-2 xl:py-4">
+                <div className="flex h-9 items-center justify-between space-x-3 px-2 text-sm xl:px-4">
+                  <div className="flex items-center space-x-3">
+                    <Image
+                      className="rounded-full"
+                      src={session.user.image!}
+                      alt=""
+                      width={16}
+                      height={16}
+                      unoptimized
+                    />
+                    <span>{session.user.name}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <form className="inline-flex" action={signOut}>
+                      <button className="inline-flex size-4 transition-colors hover:text-accent-foreground">
+                        <LogOutIcon size={16} />
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Tags */}
             {tags.length > 0 && (
               <div className="space-y-0.5 py-2 xl:py-4">
@@ -96,6 +130,18 @@ export async function Sidebar() {
                 </NavItem>
               ))}
             </div>
+
+            {/* Sign in */}
+            {!session?.user && (
+              <div className="p-2">
+                <form action={signInWithGithub}>
+                  <Button type="submit" className="w-full" variant="ghost">
+                    <GitHubLogoIcon className="size-4" />
+                    <span>Signin with GitHub</span>
+                  </Button>
+                </form>
+              </div>
+            )}
           </nav>
         </PaneContent>
       </PaneContainer>
