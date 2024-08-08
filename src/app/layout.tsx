@@ -4,7 +4,6 @@ import type { Metadata, Viewport } from 'next'
 
 import { GeistSans } from 'geist/font/sans'
 
-import { MainClient } from '@/components/main-client'
 import { Providers } from '@/components/providers'
 import { Sidebar } from '@/components/sidebar'
 
@@ -45,7 +44,7 @@ export default function Layout({ children }: Props) {
       >
         <Providers>
           <Sidebar />
-          <MainClient>{children}</MainClient>
+          <main className="flex-1">{children}</main>
         </Providers>
         <Toaster />
       </body>

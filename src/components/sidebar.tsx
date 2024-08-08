@@ -86,7 +86,7 @@ export async function Sidebar() {
 
   return (
     <SidebarClient>
-      <PaneContainer>
+      <PaneContainer className="max-h-screen overflow-y-auto">
         {/* Brand */}
         <PaneHeader className="justify-between">
           <Link
